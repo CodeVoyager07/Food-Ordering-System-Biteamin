@@ -1,0 +1,193 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;   /* Prevent vertical scrolling or horizontal scrolling if needed */
+}
+
+/* Fixed Background (if using an image) */
+body {
+    background: url('your-background-image.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    transition: background 0.3s, color 0.3s;
+    padding-top: 60px; /* Space for fixed navbar */
+}
+
+/* List Navbar */
+.list-navbar {
+    width: 100%;
+    padding: 20px,;
+    background-color: #f8f9fa;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out;
+    animation: fadeIn 1s ease-out;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* Dark Mode - Navbar */
+body.theme--dark .list-navbar {
+    background-color: #333;
+}
+
+/* Navbar Title */
+.list-navbar h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #333;
+    transition: color 0.3s ease-in-out;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Dark Mode - Navbar Title */
+body.theme--dark .list-navbar h2 {
+    color: #f5f5f5;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* List Container */
+.list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    padding: 10px;
+    gap: 15px;
+    animation: fadeIn 1s ease-out;
+    margin-top: 20px;
+    width: 100%;
+    overflow-y: auto;
+}
+
+/* List Item Styling */
+.list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 15px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+    animation: scaleIn 0.5s ease-out;
+    position: relative;
+}
+.list-item .food-name{
+    font-size: 12px;
+    font-weight: bold;
+    color: #444;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Dark Mode - List Item */
+body.theme--dark .list-item {
+    background: #444;
+    color: #f5f5f5;
+}
+
+/* Scale-in Animation */
+@keyframes scaleIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Hover Effects for List Item */
+.list-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* List Item Image */
+.list-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease;
+}
+
+/* Hover Effect for Image */
+.list-item:hover img {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+/* Food Name */
+.food-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #444;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Dark Mode - Food Name */
+body.theme--dark .food-name {
+    color: #f5f5f5;
+}
+
+/* Food Category */
+.food-category {
+    font-size: 14px;
+    color: #777;
+}
+
+/* Dark Mode - Food Category */
+body.theme--dark .food-category {
+    color: #ccc;
+}
+
+/* Food Price */
+.food-price {
+    font-size: 14px;
+    color: green;
+    margin: 5px 0;
+}
+
+/* Dark Mode - Food Price */
+body.theme--dark .food-price {
+    color: #50c878;
+}
+
+/* Remove Button */
+.remove-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+/* Dark Mode - Remove Button */
+body.theme--dark .remove-btn {
+    background-color: darkred;
+}
+
+/* Remove Button Hover Effect */
+.remove-btn:hover {
+    background-color: darkred;
+    transform: scale(1.05);
+}
+
+/* Dark Mode - Remove Button Hover Effect */
+body.theme--dark .remove-btn:hover {
+    background-color: #8b0000;
+}
+
+/* Hide scrollbar if desired */
+.list-container::-webkit-scrollbar {
+    display: none;
+}
+.list-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
