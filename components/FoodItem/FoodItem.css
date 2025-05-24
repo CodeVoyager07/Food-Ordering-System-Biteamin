@@ -1,0 +1,148 @@
+.food-item {
+    width: 100%;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    animation: fadeIn 1s ease-in-out;
+    background: #fff; /* Default Light Mode */
+    overflow: hidden;
+}
+
+body.theme--dark .food-item {
+    background: #222; /* Dark Mode */
+    color: #fff;
+}
+
+.food-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.food-item-img-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px 15px 0 0;
+    background: #fff; /* Default Light Mode */
+    transition: background 0.3s ease;
+    width: 100%;
+    height: 180px; /* Fixed height */
+    object-fit: cover; /* Maintain aspect ratio and crop excess */
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+body.theme--dark .food-item-img-container {
+    background: #222; /* Dark Mode */
+}
+
+.food-item-img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 15px 15px 0 0;
+}
+
+.food-item-img:hover {
+    transform: scale(1.1);
+}
+
+.food-item-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.food-item-name-rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.food-item-name-rating p {
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+}
+
+body.theme--dark .food-item-name-rating p {
+    color: #fff; /* Ensure text is visible in dark mode */
+}
+
+.food-item-name-rating img {
+    width: 70px;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.2));
+}
+
+.food-item-desc {
+    color: #676767;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+body.theme--dark .food-item-desc {
+    color: #bbb; /* Light gray text for readability */
+}
+
+.food-item-price {
+    color: tomato;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 12px 0;
+}
+
+.food-item-img-container .add {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    background: tomato;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.food-item-img-container .add:hover {
+    transform: scale(1.1);
+    background: #ff6347;
+}
+
+/* Counter Button - Do Not Change */
+.food-item-counter {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 12px;
+    border-radius: 50px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Dark Mode Fix for Counter Button */
+body.theme--dark .food-item-counter {
+    background-color: #333;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 3px 8px rgba(255, 255, 255, 0.2);
+}
+
+body.theme--dark .food-item-counter img {
+    filter: brightness(1) invert(1);
+}
+
+.food-item-counter img {
+    width: 30px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.food-item-counter img:hover {
+    transform: scale(1.1);
+}

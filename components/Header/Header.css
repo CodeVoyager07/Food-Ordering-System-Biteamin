@@ -1,0 +1,126 @@
+/* Header Section */
+.header {
+    height: 34vw;
+    margin: 125px auto 30px; /* Increased margin to avoid navbar overlap */
+    background: url('/header_img.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    /* box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); */
+}
+
+/* Dark Overlay to Improve Text Visibility */
+.header::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background: rgba(0, 0, 0, 0.3); */
+    top: 0;
+    left: 0;
+}
+
+/* Header Content */
+.header-contents {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.5vw;
+    max-width: 50%;
+    bottom: 12%;
+    left: 6vw;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Header Title */
+.header-contents h2 {
+    font-weight: 700;
+    font-size: max(4.5vw, 24px);
+    background: linear-gradient(90deg, white, white); /* Orange Gradient */
+    -webkit-background-clip: text;
+    color: whitesmoke;
+    /* -webkit-text-fill-color: transparent; */
+    text-shadow: 2px 2px 10px rgba(11, 11, 11, 0.3); /* Subtle Glow */
+}
+
+/* Header Paragraph */
+.header-contents p {
+    font-size: 1.2vw;
+    font-weight: 500;
+    color: white; /* Warm orange shade */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+/* Button Styling */
+.header-contents button {
+    position: relative;
+    border: none;
+    font-weight: 600;
+    padding: 1vw 2.5vw;
+    font-size: max(1vw, 14px);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    background: linear-gradient(45deg, #ff7e5f, #ff6b6b);
+    color: white;
+    box-shadow: 0px 5px 10px rgba(255, 94, 98, 0.3);
+    overflow: hidden;
+}
+
+/* Button Hover Animation */
+.header-contents button:hover {
+    background: linear-gradient(45deg, #ff6b6b, #ff4757);
+    transform: scale(1.05);
+    box-shadow: 0px 8px 15px rgba(255, 94, 98, 0.5);
+}
+
+/* Button Hover Effect */
+.header-contents button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    opacity: 0.2;
+    transform: scale(0);
+    transition: transform 0.4s ease-in-out;
+}
+
+.header-contents button:hover::before {
+    transform: scale(2);
+}
+
+/* Responsive Design */
+@media (max-width: 1050px) {
+    .header-contents {
+        max-width: 45%;
+    }
+}
+
+@media (max-width: 750px) {
+    .header-contents {
+        max-width: 65%;
+    }
+    .header-contents p {
+        display: none;
+    }
+    .header-contents button {
+        padding: 2vw 4vw;
+    }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
