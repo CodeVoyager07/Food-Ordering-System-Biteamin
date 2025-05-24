@@ -1,0 +1,72 @@
+/* Full-page background animation */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(-45deg, #f5e8da, #f8ede3, #e0cfcf, #f5e8da);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+/* Wrapper centers the card */
+.success-page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card Styling with animation */
+.success-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 600px;
+  animation: slideFadeIn 1s ease-out forwards;
+  transform: translateY(40px);
+  opacity: 0;
+}
+
+/* Animated check icon */
+.success-icon {
+  font-size: 48px;
+  animation: bounce 1s ease infinite alternate;
+  margin-bottom: 16px;
+}
+
+/* Text styling */
+.success-page h1 {
+  font-size: 32px;
+  margin-bottom: 12px;
+  color: #2e2e4d;
+}
+
+.success-page p {
+  font-size: 18px;
+  color: #4b4b63;
+  margin: 4px 0;
+}
+
+/* Animations */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes slideFadeIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-8px); }
+}
